@@ -1,21 +1,52 @@
 <template>
   <div class="header">
     <div class="links_container">
-      <a class="link">Каталог</a>
-      <a class="link">Доставка</a>
-      <a class="link">Оплата</a>
-      <a class="link">Контакты</a>
-      <a class="link">О компании</a>
+      <a href="#" class="link">Каталог</a>
+      <a href="#" class="link">Доставка</a>
+      <a href="#" class="link">Оплата</a>
+      <a href="#" class="link">Контакты</a>
+      <a href="#" class="link">О компании</a>
     </div>
     <div class="search_container">
-      <input class="search" placeholder="Поиск по названию картины">
-      <button class="btn">Найти</button>
+      <input class="search" placeholder="Поиск по названию картины" v-model="search" @input="searchPaintings">
+      <button class="btn" @click="searchPaintings" title="Обновить">Найти</button>
     </div>
   </div>
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      allPaintings: [
+        {id: 1, name: "Рождение Венеры", author: "Сандро Боттичелли", price: 1000000, sale: 2000000},
+        {id: 2, name: "Тайная вечеря", author: "Леонардо да Винчи", price: 3000000},
+        {id: 3, name: "Сотворение Адама", author: "Микеланджело", price: 5000000, sale: 6000000},
+        {id: 4, name: "Урок анатомии", author: "Рембрандт", price: null, sold: true}
+      ],
+      paintings: [],
+      search: '',
+    }
+  },
+  created() {
+    this.paintings = this.allPaintings
+  },
+  methods: {
+    searchPaintings() {
+      let filteredPaintings = this.allPaintings.filter(painting => painting.name.toLowerCase().includes(this.search.toLowerCase()))
+      this.paintings = filteredPaintings.length > 0 ? filteredPaintings : null
+      let blocks = document.querySelectorAll('.block, .block_sales')
+      blocks.forEach(block => {
+        let paintingName = block.querySelector('.description').textContent.toLowerCase()
+        if (!paintingName.includes(this.search.toLowerCase())) {
+          block.style.display = 'none'
+        } else {
+          block.style.display = 'block'
+        }
+      })
+    }
+  }
+}
 </script>
 
 <style>
@@ -77,5 +108,11 @@
   width: 6.35vw;
   height: 2.65vw;
   background: #403432;
+}
+.btn:hover {
+  color: #F4F6F9;
+  border: 1px solid #776763;
+  background: #776763;
+  transition: 0.2s all ease;
 }
 </style>

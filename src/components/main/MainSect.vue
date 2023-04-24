@@ -44,7 +44,9 @@
 </template>
 
 <script>
-
+export default {
+  
+}
 </script>
 
 <style>
@@ -158,5 +160,11 @@
   width: 6.15vw;
   height: 2.65vw;
   background: #403432;
+}
+.btn_main:hover {
+  color: #F4F6F9;
+  border: 1px solid #776763;
+  background: #776763;
+  transition: 0.2s all ease;
 }
 </style>

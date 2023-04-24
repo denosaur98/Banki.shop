@@ -1,11 +1,11 @@
 <template>
   <div class="footer">
     <div class="links_container">
-      <a class="link">Каталог</a>
-      <a class="link">Доставка</a>
-      <a class="link">Оплата</a>
-      <a class="link">Контакты</a>
-      <a class="link">О компании</a>
+      <a href="#" class="link">Каталог</a>
+      <a href="#" class="link">Доставка</a>
+      <a href="#" class="link">Оплата</a>
+      <a href="#" class="link">Контакты</a>
+      <a href="#" class="link">О компании</a>
     </div>
     <div class="contacts_footer_container">
       <div class="contacts_container">
@@ -34,7 +34,7 @@
 }
 .contacts_footer_container {
   display: flex;
-  margin-top: 1.15vw;
+  margin-top: 1.35vw;
   margin-left: 7.92vw;
   margin-right: 13.5vw;
 }
