@@ -38,7 +38,7 @@
   display: flex;
   margin-top: 1.15vw;
   margin-left: 7.92vw;
-  margin-right: 18.33vw;
+  margin-right: 19.33vw;
 }
 .link {
   cursor: pointer;
