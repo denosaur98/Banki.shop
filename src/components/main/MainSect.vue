@@ -10,7 +10,7 @@
             <s class="price_sale">2 000 000 $</s>
             <p class="price">1 000 000 $</p>
           </div>
-          <button class="btn_main">Купить</button>
+          <button class="btn_main" @click="addToCart($event)">Купить</button>
         </div>
       </div>
       <div class="block">
@@ -18,7 +18,7 @@
         <p class="description">«Тайная вечеря»<br>Леонардо да Винчи</p>
         <div class="price_container">
           <p class="nt_sale">3 000 000 $</p>
-          <button class="btn_main">Купить</button>
+          <button class="btn_main" @click="addToCart($event)">Купить</button>
         </div>
       </div>
       <div class="block">
@@ -29,7 +29,7 @@
             <s class="price_sale">6 000 000 $</s>
             <p class="price">5 000 000 $</p>
           </div>
-          <button class="btn_main">Купить</button>
+          <button class="btn_main" @click="addToCart($event)">Купить</button>
         </div>
       </div>
       <div class="block_sales">
@@ -45,7 +45,34 @@
 
 <script>
 export default {
-  
+  methods: {
+    addToCart(event) {
+      const btn = event.target
+      if (btn.classList.contains('basket')) {
+        btn.classList.add('loading')
+        btn.innerText = 'Обрабатывается'
+        btn.style.fontSize = '0.6vw'
+        setTimeout(() => {
+          btn.classList.remove('loading')
+          btn.classList.remove('basket')
+          btn.innerText = 'Купить'
+          btn.style.fontSize = '1.02vw'
+          btn.disabled = false
+        }, 2000)
+      } else {
+        btn.classList.add('loading')
+        btn.innerText = 'Обрабатывается'
+        btn.disabled = true
+        setTimeout(() => {
+          btn.classList.remove('loading')
+      
+          btn.classList.add('basket')
+          btn.innerText = 'В корзине'
+          btn.disabled = false
+        }, 2000)
+      }
+    }
+  }
 }
 </script>
 
@@ -161,10 +188,37 @@ export default {
   height: 2.65vw;
   background: #403432;
 }
-.btn_main:hover {
+.btn_main:not(.loading):hover {
   color: #F4F6F9;
   border: 1px solid #776763;
   background: #776763;
   transition: 0.2s all ease;
+}
+.loading {
+  opacity: 0.7;
+  cursor: pointer;
+  border: 1px solid #5B3A32;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.6vw;
+  line-height: 150%;
+  width: 6.15vw;
+  height: 2.65vw;
+  color: #F4F6F9;
+  background: #5B3A32;
+}
+.basket {
+  cursor: pointer;
+  border: 1px solid #5B3A32;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9vw;
+  line-height: 150%;
+  width: 6.15vw;
+  height: 2.65vw;
+  color: #F4F6F9;
+  background: #5B3A32;
 }
 </style>
