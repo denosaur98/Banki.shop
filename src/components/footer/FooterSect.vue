@@ -36,7 +36,7 @@
   display: flex;
   margin-top: 1.15vw;
   margin-left: 7.92vw;
-  margin-right: 15.33vw;
+  margin-right: 13.5vw;
 }
 .contacts {
   font-family: 'Merriweather';
