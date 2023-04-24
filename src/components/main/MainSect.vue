@@ -50,24 +50,24 @@ export default {
       const btn = event.target
       if (btn.classList.contains('basket')) {
         btn.classList.add('loading')
-        btn.innerText = 'Обрабатывается'
+        btn.innerHTML = '<span class="loading"></span>'
         btn.style.fontSize = '0.6vw'
         setTimeout(() => {
           btn.classList.remove('loading')
           btn.classList.remove('basket')
-          btn.innerText = 'Купить'
+          btn.innerHTML = 'Купить'
           btn.style.fontSize = '1.02vw'
           btn.disabled = false
         }, 2000)
       } else {
         btn.classList.add('loading')
-        btn.innerText = 'Обрабатывается'
+        btn.innerHTML = '<span class="loading"></span>'
         btn.disabled = true
         setTimeout(() => {
           btn.classList.remove('loading')
-      
           btn.classList.add('basket')
-          btn.innerText = 'В корзине'
+          btn.innerHTML = ''
+          btn.style.fontSize = '0.95vw'
           btn.disabled = false
         }, 2000)
       }
@@ -188,37 +188,54 @@ export default {
   height: 2.65vw;
   background: #403432;
 }
-.btn_main:not(.loading):hover {
+.btn_main:not(.loading):not(.basket):hover {
   color: #F4F6F9;
   border: 1px solid #776763;
   background: #776763;
   transition: 0.2s all ease;
 }
 .loading {
-  opacity: 0.7;
-  cursor: pointer;
-  border: 1px solid #5B3A32;
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 0.6vw;
-  line-height: 150%;
-  width: 6.15vw;
-  height: 2.65vw;
-  color: #F4F6F9;
-  background: #5B3A32;
+  opacity: 0.5;
 }
 .basket {
   cursor: pointer;
   border: 1px solid #5B3A32;
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 0.9vw;
   line-height: 150%;
   width: 6.15vw;
   height: 2.65vw;
-  color: #F4F6F9;
   background: #5B3A32;
+  background-image: url('../main/basket_white.png');
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.loading::before {
+  margin-top: -0.10vw;
+  margin-left: -0.16vw;
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+.loading span {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  text-align: center;
+  font-size: 0;
 }
 </style>
