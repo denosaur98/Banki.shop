@@ -205,7 +205,7 @@ export default {
   height: 2.65vw;
   background: #5B3A32;
   background-image: url('../main/basket_white.png');
-  background-size: 30%;
+  background-size: 25%;
   background-repeat: no-repeat;
   background-position: center center;
 }
