@@ -12,6 +12,10 @@
           </div>
           <button class="btn_main" @click="addToCart($event)" data-id="product-1">Купить</button>
         </div>
+        <div>
+          <button class="btn_modal" @click="showModalOne = true"></button>
+          <CardModal :card="selectedCardOne" :show-modal="showModalOne" @close-modal="showModalOne = false"/>
+        </div>
       </div>
       <div class="block">
         <div class="item2"></div>
@@ -19,6 +23,10 @@
         <div class="price_container">
           <p class="nt_sale">3 000 000 $</p>
           <button class="btn_main" @click="addToCart($event)" data-id="product-2">Купить</button>
+        </div>
+        <div>
+          <button class="btn_modal" @click="showModalTwo = true"></button>
+          <CardModal :card="selectedCardTwo" :show-modal="showModalTwo" @close-modal="showModalTwo = false"/>
         </div>
       </div>
       <div class="block">
@@ -30,6 +38,10 @@
             <p class="price">5 000 000 $</p>
           </div>
           <button class="btn_main" @click="addToCart($event)" data-id="product-3">Купить</button>
+        </div>
+        <div>
+          <button class="btn_modal" @click="showModalThree = true"></button>
+          <CardModal :card="selectedCardThree" :show-modal="showModalThree" @close-modal="showModalThree = false"/>
         </div>
       </div>
       <div class="block_sales">
@@ -44,13 +56,56 @@
 </template>
 
 <script>
+import CardModal from '../modal/CardModal.vue'
 export default {
+  components: {
+    CardModal
+  },
+  data() {
+    return {
+      showModalOne: false,
+      selectedCardOne: {
+        title: "«Рождение Венеры»",
+        author: "Сандро Боттичелли",
+        images: [
+          "https://picsum.photos/200/300",
+          "https://picsum.photos/200/300",
+          "https://picsum.photos/200/300"
+        ],
+        description: "Описание картины 1",
+        price: 1000,
+      },
+      showModalTwo: false,
+      selectedCardTwo: {
+        title: "«Тайная вечеря»",
+        author: "Леонардо да Винчи",
+        images: [
+          "https://picsum.photos/200/300",
+          "https://picsum.photos/200/300",
+          "https://picsum.photos/200/300"
+        ],
+        description: "Описание картины 2",
+        price: 1000,
+      },
+      showModalThree: false,
+      selectedCardThree: {
+        title: "«Сотворение Адама»",
+        author: "Микеланджело",
+        images: [
+          "https://picsum.photos/200/300",
+          "https://picsum.photos/200/300",
+          "https://picsum.photos/200/300"
+        ],
+        description: "Описание картины 1",
+        price: 1000,
+      }
+    };
+  },
   methods: {
     addToCart(event) {
       const btn = event.target;
       const productId = btn.getAttribute('data-id');
       const state = localStorage.getItem(productId) || 'btn_main';
-      
       if (state === 'basket') {
         btn.classList.add('loading');
         btn.innerHTML = '<span class="loading"></span>';
@@ -158,6 +213,7 @@ export default {
   height: 8.33vw;
 }
 .description {
+  position: relative;
   font-family: 'Merriweather';
   font-style: normal;
   font-weight: 400;
@@ -166,6 +222,7 @@ export default {
   display: flex;
   justify-content: center;
   color: #343030;
+  z-index: -1;
 }
 .price_container {
   display: flex;
@@ -265,5 +322,16 @@ export default {
   width: 100%;
   text-align: center;
   font-size: 0;
+}
+.btn_modal {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  width: 14.58vw;
+  height: 12vw;
+  margin-top: -16vw;
+  background: none;
+  border: none;
+  z-index: 1;
 }
 </style>
