@@ -209,6 +209,10 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.basket:hover {
+  transition: 0.2s all ease;
+  box-shadow: 1px 1px 10px 1px #5B3A32;
+}
 .loading::before {
   margin-top: -0.10vw;
   margin-left: -0.16vw;
