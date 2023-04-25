@@ -10,7 +10,7 @@
             <s class="price_sale">2 000 000 $</s>
             <p class="price">1 000 000 $</p>
           </div>
-          <button class="btn_main" @click="addToCart($event)">Купить</button>
+          <button class="btn_main" @click="addToCart($event)" data-id="product-1">Купить</button>
         </div>
       </div>
       <div class="block">
@@ -18,7 +18,7 @@
         <p class="description">«Тайная вечеря»<br>Леонардо да Винчи</p>
         <div class="price_container">
           <p class="nt_sale">3 000 000 $</p>
-          <button class="btn_main" @click="addToCart($event)">Купить</button>
+          <button class="btn_main" @click="addToCart($event)" data-id="product-2">Купить</button>
         </div>
       </div>
       <div class="block">
@@ -29,7 +29,7 @@
             <s class="price_sale">6 000 000 $</s>
             <p class="price">5 000 000 $</p>
           </div>
-          <button class="btn_main" @click="addToCart($event)">Купить</button>
+          <button class="btn_main" @click="addToCart($event)" data-id="product-3">Купить</button>
         </div>
       </div>
       <div class="block_sales">
@@ -47,31 +47,55 @@
 export default {
   methods: {
     addToCart(event) {
-      const btn = event.target
-      if (btn.classList.contains('basket')) {
-        btn.classList.add('loading')
-        btn.innerHTML = '<span class="loading"></span>'
-        btn.style.fontSize = '0.6vw'
+      const btn = event.target;
+      const productId = btn.getAttribute('data-id');
+      const state = localStorage.getItem(productId) || 'btn_main';
+      
+      if (state === 'basket') {
+        btn.classList.add('loading');
+        btn.innerHTML = '<span class="loading"></span>';
+        btn.style.fontSize = '0.6vw';
         setTimeout(() => {
-          btn.classList.remove('loading')
-          btn.classList.remove('basket')
-          btn.innerHTML = 'Купить'
-          btn.style.fontSize = '1.02vw'
-          btn.disabled = false
-        }, 2000)
+          btn.classList.remove('loading');
+          btn.classList.remove('basket');
+          btn.innerHTML = 'Купить';
+          btn.style.fontSize = '1.02vw';
+          btn.disabled = false;
+          localStorage.setItem(productId, 'btn_main');
+        }, 2000);
       } else {
-        btn.classList.add('loading')
-        btn.innerHTML = '<span class="loading"></span>'
-        btn.disabled = true
+        btn.classList.add('loading');
+        btn.innerHTML = '<span class="loading"></span>';
+        btn.disabled = true;
         setTimeout(() => {
-          btn.classList.remove('loading')
-          btn.classList.add('basket')
-          btn.innerHTML = ''
-          btn.style.fontSize = '0.95vw'
-          btn.disabled = false
-        }, 2000)
+          btn.classList.remove('loading');
+          btn.classList.add('basket');
+          btn.innerHTML = '';
+          btn.style.fontSize = '0.95vw';
+          btn.disabled = false;
+          localStorage.setItem(productId, 'basket');
+        }, 2000);
       }
+    },
+    initState() {
+      const btns = document.querySelectorAll('.btn_main');
+      btns.forEach(btn => {
+        const productId = btn.getAttribute('data-id');
+        const state = localStorage.getItem(productId);
+        if (state === 'basket') {
+          btn.classList.add('basket');
+          btn.innerHTML = '';
+          btn.style.fontSize = '0.95vw';
+        } else {
+          btn.classList.remove('basket');
+          btn.innerHTML = 'Купить';
+          btn.style.fontSize = '1.02vw';
+        }
+      });
     }
+  },
+  mounted() {
+    this.initState();
   }
 }
 </script>
@@ -210,7 +234,7 @@ export default {
   background-position: center center;
 }
 .basket:hover {
-  transition: 0.2s all ease;
+  transition: 0.25s all ease;
   box-shadow: 1px 1px 10px 1px #5B3A32;
 }
 .loading::before {
