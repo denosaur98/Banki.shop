@@ -193,10 +193,10 @@ export default {
 }
 .modal-container::-webkit-scrollbar {
   width: 5px;
-  background-color: #f5f5f5;
+  background-color: #343030;
 }
 .modal-container::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
+  background-color: #343030;
 }
 .modal-container::-webkit-scrollbar-thumb {
   background-color: #888;
