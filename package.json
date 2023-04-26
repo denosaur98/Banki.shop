@@ -1,7 +1,7 @@
 {
   "name": "Banki.shop",
   "version": "0.1.0",
-  "homepage": "https://github.com/denosaur98/Banki.shop/tree/gh-pages",
+  "homepage": "https://denosaur98.github.io/Banki.shop/",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
