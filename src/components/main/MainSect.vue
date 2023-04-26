@@ -77,7 +77,7 @@ export default {
         title: "«Рождение Венеры»",
         author: "Сандро Боттичелли",
         images: [
-          'https://avatars.dzeninfra.ru/get-zen_doc/163667/pub_5d5ee32e78125e00ac050b1e_5d5ee339c49f2900ad3a01df/scale_1200',
+          'https://i2.wp.com/arts-dnevnik.ru/wp-content/uploads/2017/07/IMG_4400.jpg',
           'https://artfactor.com.ua/image/catalog/gallery/002651/preview/mod_id/1/002651_1_1.jpg',
           'https://cdn.leroymerlin.ru/lmru/image/upload/v1635381094/b_white,c_pad,d_photoiscoming.png,f_auto,h_600,q_auto,w_600/lmcode/7QxyBZby90i1wbNUeaGYXQ/93702933_02.jpg'
         ],
@@ -297,7 +297,7 @@ export default {
   color: #F4F6F9;
   border: 1px solid #776763;
   background: #776763;
-  transition: 0.2s all ease;
+  transition: 0.3s all ease;
 }
 .loading {
   opacity: 0.5;
@@ -315,7 +315,7 @@ export default {
   background-position: center center;
 }
 .basket:hover {
-  transition: 0.25s all ease;
+  transition: 0.3s all ease;
   box-shadow: 1px 1px 10px 1px #5B3A32;
 }
 .loading::before {
@@ -357,11 +357,5 @@ export default {
   background: none;
   border: none;
   z-index: 1;
-}
-.slider-img {
-  width: 300px;
-  height: 300px;
-  object-fit: contain;
-  background-size: cover;
 }
 </style>

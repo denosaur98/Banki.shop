@@ -20,10 +20,6 @@
   </div>
 </template>
 
-<script>
-
-</script>
-
 <style>
 .footer {
   display: flex;
@@ -31,6 +27,10 @@
   height: 5vw;
   border-bottom: 1px solid rgb(187, 187, 187);
   background: #E5E5E5;
+}
+.link:hover {
+  opacity: 0.7;
+  transition: 0.3s all ease;
 }
 .contacts_footer_container {
   display: flex;

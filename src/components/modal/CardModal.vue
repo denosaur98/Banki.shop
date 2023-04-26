@@ -3,26 +3,27 @@
     <div class="modal-overlay" @click="closeModal"></div>
     <div class="modal-container">
       <div class="modal-header">
-        <h3>{{ card.title }}</h3>
-        <button class="close-button" @click="closeModal">X</button>
+        <h3 class="title_picture">{{ card.title }}</h3>
+        <button class="close-button" @click="closeModal">&times;</button>
       </div>
       <p class="author">{{ card.author }}</p>
       <div class="modal-content">
         <div class="modal-slider">
           <div class="slider-button slider-button-left" @click="prevImage">
-            A<i class="fas fa-chevron-left"></i>
+            &#9668;<i class="fas fa-chevron-left"></i>
           </div>
           <img :src="currentImage" :key="currentImage" class="slider img"/>
           <div class="slider-button slider-button-right" @click="nextImage">
-            Aaaaa<i class="fas fa-chevron-right"></i>
+            &#9658;<i class="fas fa-chevron-right"></i>
           </div>
         </div>
-        <p>{{ card.description }}</p>
-        <p>Цена: {{ card.price }}</p>
+        <p class="description_modal">{{ card.description }}</p>
+        <p class="price_modal">Цена: <em>{{ card.price }} $</em></p>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -62,6 +63,7 @@ export default {
   }
 };
 </script>
+
 <style>
 .modal {
   position: fixed;
@@ -89,20 +91,53 @@ export default {
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: rgb(218, 218, 218);
 }
 .modal-header {
+  margin-top: -2.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .close-button {
-  font-size: 30px;
+  font-size: 3.2vw;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: #343030;
+}
+.title_picture {
+  display: flex;
+  font-size: 2.2vw;
+  color: #343030;
+  font-style: normal;
+  font-weight: bold;
+  font-family: 'Merriweather';
 }
 .author {
-  margin-top: -1vw;
+  margin-left: 1.5vw;
+  color: #343030;
+  font-weight: 500;
+  font-size: 1.02vw;
+  font-family: 'Merriweather';
+  margin-top: -2vw;
+  font-style: italic;
+}
+.description_modal {
+  margin-top: 1.9vw;
+  color: #343030;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.05vw;
+  font-family: 'Merriweather';
+}
+.price_modal {
+  color: #343030;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 2vw;
+  font-family: 'Merriweather';
+  text-decoration: underline;
 }
 .modal-content {
   margin-top: 20px;
@@ -110,8 +145,6 @@ export default {
 .slider-button {
   z-index: 999;
   position: absolute;
-  display: flex;
-  justify-content: space-between;
   top: 50%;
   transform: translateY(-50%);
   background-color: transparent;
@@ -120,21 +153,33 @@ export default {
   color: #fff;
 }
 .slider-button-left {
-  border: 1px solid black;
+  font-size: 40px;
+  height: 35px;
+  width: 10px;
+  color: rgb(255, 255, 255);
+}
+.slider-button-left:hover {
+  color: rgba(255,145,54,1);
+  transition: 0.3s all ease;
 }
 .slider-button-right {
-  display: flex;
-  float: right;
-  border: 1px solid black;
-  margin-left: 200px;
+  font-size: 40px;
+  height: 35px;
+  width: 10px;
+  margin-left: 41vw;
+  color: rgb(255, 255, 255);
+}
+.slider-button-right:hover {
+  color: rgba(255,145,54,1);
+  transition: 0.3s all ease;
 }
 .slider {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  max-width: 600px;
-  max-height: 400px;
+  width: 43.92vw;
+  height: 29.28vw;
   background-size: cover;
 }
 .img {
@@ -142,8 +187,8 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 600px;
-  height: 400px;
+  width: 43.92vw;
+  height: 29.28vw;
   background-size: cover;
 }
 </style>
