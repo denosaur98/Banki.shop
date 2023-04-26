@@ -1,19 +1,19 @@
 <template>
   <div class="modal" v-if="showModal">
-    <div class="modal-overlay" @click="closeModal"></div>
-    <div class="modal-container">
-      <div class="modal-header">
+    <div class="modal_overlay" @click="closeModal"></div>
+    <div class="modal_container">
+      <div class="modal_header">
         <h3 class="title_picture">{{ card.title }}</h3>
-        <button class="close-button" @click="closeModal">&times;</button>
+        <button class="close_button" @click="closeModal">&times;</button>
       </div>
       <p class="author">{{ card.author }}</p>
-      <div class="modal-content">
-        <div class="modal-slider">
-          <div class="slider-button slider-button-left" @click="prevImage">
+      <div class="modal_content">
+        <div class="modal_slider">
+          <div class="slider_button slider_button_left" @click="prevImage">
             &#9668;<i class="fas fa-chevron-left"></i>
           </div>
           <img :src="currentImage" :key="currentImage" class="slider img"/>
-          <div class="slider-button slider-button-right" @click="nextImage">
+          <div class="slider_button slider_button_right" @click="nextImage">
             &#9658;<i class="fas fa-chevron-right"></i>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default {
   bottom: 0;
   z-index: 9999;
 }
-.modal-overlay {
+.modal_overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -85,7 +85,7 @@ export default {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal-container {
+.modal_container {
   position: relative;
   margin: auto;
   max-width: 600px;
@@ -97,18 +97,22 @@ export default {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background: rgb(218, 218, 218);
 }
-.modal-header {
+.modal_header {
   margin-top: -2.5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.close-button {
+.close_button {
   font-size: 3.2vw;
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: #343030;
+}
+.close_button:hover {
+  opacity: 0.7;
+  transition: 0.3s all ease;
 }
 .title_picture {
   display: flex;
@@ -143,10 +147,10 @@ export default {
   font-family: 'Merriweather';
   text-decoration: underline;
 }
-.modal-content {
+.modal_content {
   margin-top: 20px;
 }
-.slider-button {
+.slider_button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -164,17 +168,17 @@ export default {
   transition: background-color 0.2s ease-in-out;
   z-index: 999;
 }
-.slider-button-left {
+.slider_button_left {
   left: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.slider-button-right {
+.slider_button_right {
   right: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-.slider-button:hover {
+.slider_button:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 .slider {
@@ -195,14 +199,14 @@ export default {
   height: 29.28vw;
   background-size: cover;
 }
-.modal-container::-webkit-scrollbar {
+.modal_container::-webkit-scrollbar {
   width: 5px;
   background-color: #343030;
 }
-.modal-container::-webkit-scrollbar-track {
+.modal_container::-webkit-scrollbar-track {
   background-color: #343030;
 }
-.modal-container::-webkit-scrollbar-thumb {
+.modal_container::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 5px;
 }
