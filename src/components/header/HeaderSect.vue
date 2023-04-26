@@ -113,6 +113,6 @@ export default {
   color: #F4F6F9;
   border: 1px solid #776763;
   background: #776763;
-  transition: 0.2s all ease;
+  transition: 0.3s all ease;
 }
 </style>

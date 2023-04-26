@@ -108,73 +108,73 @@ export default {
         description: "Фреска Микеланджело, написанная около 1511 года. Фреска является четвёртой из девяти центральных композиций потолка Сикстинской капеллы, посвящённых девяти сюжетам книги Бытия. ",
         price: '5 000 000',
       }
-    };
+    }
   },
   methods: {
     addToCart(event) {
-      const btn = event.target;
-      const productId = btn.getAttribute('data-id');
-      const state = localStorage.getItem(productId) || 'btn_main';
+      const btn = event.target
+      const productId = btn.getAttribute('data-id')
+      const state = localStorage.getItem(productId) || 'btn_main'
       if (state === 'basket') {
-        btn.classList.add('loading');
-        btn.innerHTML = '<span class="loading"></span>';
-        btn.style.fontSize = '0.6vw';
+        btn.classList.add('loading')
+        btn.innerHTML = '<span class="loading"></span>'
+        btn.style.fontSize = '0.6vw'
         setTimeout(() => {
-          btn.classList.remove('loading');
-          btn.classList.remove('basket');
-          btn.innerHTML = 'Купить';
-          btn.style.fontSize = '1.02vw';
-          btn.disabled = false;
-          localStorage.setItem(productId, 'btn_main');
-        }, 2000);
+          btn.classList.remove('loading')
+          btn.classList.remove('basket')
+          btn.innerHTML = 'Купить'
+          btn.style.fontSize = '1.02vw'
+          btn.disabled = false
+          localStorage.setItem(productId, 'btn_main')
+        }, 2000)
       } else {
-        btn.classList.add('loading');
-        btn.innerHTML = '<span class="loading"></span>';
-        btn.disabled = true;
+        btn.classList.add('loading')
+        btn.innerHTML = '<span class="loading"></span>'
+        btn.disabled = true
         setTimeout(() => {
-          btn.classList.remove('loading');
-          btn.classList.add('basket');
-          btn.innerHTML = '';
-          btn.style.fontSize = '0.95vw';
-          btn.disabled = false;
-          localStorage.setItem(productId, 'basket');
-        }, 2000);
+          btn.classList.remove('loading')
+          btn.classList.add('basket')
+          btn.innerHTML = ''
+          btn.style.fontSize = '0.95vw'
+          btn.disabled = false
+          localStorage.setItem(productId, 'basket')
+        }, 2000)
       }
     },
     initState() {
-      const btns = document.querySelectorAll('.btn_main');
+      const btns = document.querySelectorAll('.btn_main')
       btns.forEach(btn => {
-        const productId = btn.getAttribute('data-id');
-        const state = localStorage.getItem(productId);
+        const productId = btn.getAttribute('data-id')
+        const state = localStorage.getItem(productId)
         if (state === 'basket') {
-          btn.classList.add('basket');
-          btn.innerHTML = '';
-          btn.style.fontSize = '0.95vw';
+          btn.classList.add('basket')
+          btn.innerHTML = ''
+          btn.style.fontSize = '0.95vw'
         } else {
-          btn.classList.remove('basket');
-          btn.innerHTML = 'Купить';
-          btn.style.fontSize = '1.02vw';
+          btn.classList.remove('basket')
+          btn.innerHTML = 'Купить'
+          btn.style.fontSize = '1.02vw'
         }
-      });
+      })
     },
     setImagesSize() {
       this.selectedCardOne.images.forEach(img => {
-        img.style.width = "500px";
-        img.style.height = "400px";
-      });
+        img.style.width = "500px"
+        img.style.height = "400px"
+      })
       this.selectedCardTwo.images.forEach(img => {
-        img.style.width = "500px";
-        img.style.height = "400px";
-      });
+        img.style.width = "500px"
+        img.style.height = "400px"
+      })
       this.selectedCardThree.images.forEach(img => {
-        img.style.width = "500px";
-        img.style.height = "400px";
-      });
+        img.style.width = "500px"
+        img.style.height = "400px"
+      })
     }
   },
   mounted() {
-    this.initState();
-    this.setImagesSize();
+    this.initState()
+    this.setImagesSize()
   },
 }
 </script>

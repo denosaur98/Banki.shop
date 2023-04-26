@@ -39,29 +39,33 @@ export default {
   data() {
     return {
       currentImageIndex: 0
-    };
+    }
   },
   computed: {
     currentImage() {
-      return this.card.images[this.currentImageIndex];
+      return this.card.images[this.currentImageIndex]
     }
   },
   methods: {
     closeModal() {
-      this.$emit("close-modal");
+      this.$emit("close-modal")
     },
     prevImage() {
-      if (this.currentImageIndex > 0) {
-        this.currentImageIndex--;
+      if (this.currentImageIndex === 0) {
+        this.currentImageIndex = this.card.images.length - 1
+      } else {
+        this.currentImageIndex--
       }
     },
     nextImage() {
-      if (this.currentImageIndex < this.card.images.length - 1) {
-        this.currentImageIndex++;
+      if (this.currentImageIndex === this.card.images.length - 1) {
+        this.currentImageIndex = 0
+      } else {
+        this.currentImageIndex++
       }
     },
   }
-};
+}
 </script>
 
 <style>
