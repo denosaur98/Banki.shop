@@ -57,6 +57,15 @@
 
 <script>
 import CardModal from '../modal/CardModal.vue'
+// import one from '../main/modalOne/one.jpg';
+// import two from '../main/modalOne/two.jpg';
+// import three from '../main/modalOne/three.jpg';
+// import four from '../main/modalTwo/four.jpg';
+// import five from '../main/modalTwo/five.jpg';
+// import six from '../main/modalTwo/six.jpg';
+// import seven from '../main/modalThree/seven.jpg';
+// import eight from '../main/modalThree/eight.jpg';
+// import nine from '../main/modalThree/nine.jpg';
 export default {
   components: {
     CardModal
@@ -68,36 +77,36 @@ export default {
         title: "«Рождение Венеры»",
         author: "Сандро Боттичелли",
         images: [
-          "https://picsum.photos/200/300",
-          "https://picsum.photos/200/300",
-          "https://picsum.photos/200/300"
+          'https://avatars.dzeninfra.ru/get-zen_doc/163667/pub_5d5ee32e78125e00ac050b1e_5d5ee339c49f2900ad3a01df/scale_1200',
+          'https://artfactor.com.ua/image/catalog/gallery/002651/preview/mod_id/1/002651_1_1.jpg',
+          'https://cdn.leroymerlin.ru/lmru/image/upload/v1635381094/b_white,c_pad,d_photoiscoming.png,f_auto,h_600,q_auto,w_600/lmcode/7QxyBZby90i1wbNUeaGYXQ/93702933_02.jpg'
         ],
-        description: "Описание картины 1",
-        price: 1000,
+        description: "Картина итальянского художника тосканской школы Сандро Боттичелли. Представляет собой живопись темперой на холсте размером 172,5 × 278,5 см. В настоящее время хранится в галерее Уффици, Флоренция.",
+        price: '1 000 000',
       },
       showModalTwo: false,
       selectedCardTwo: {
         title: "«Тайная вечеря»",
         author: "Леонардо да Винчи",
         images: [
-          "https://picsum.photos/200/300",
-          "https://picsum.photos/200/300",
-          "https://picsum.photos/200/300"
+          'https://avatars.dzeninfra.ru/get-zen_doc/1779163/pub_5dfa9d973642b607cd29c9ac_5dfa9e1ed7859b00b2dd19e4/scale_1200',
+          'https://artfactor.com.ua/image/catalog/gallery/001001/preview/mod_id/1/001001_1_1.jpg',
+          'https://walldeco.ua/img/gallery_merged/122/00256.jpg',
         ],
-        description: "Описание картины 2",
-        price: 1000,
+        description: "Монументальная роспись работы Леонардо да Винчи, изображающая сцену последней трапезы Христа со своими учениками. Создана в 1495—1498 годы в доминиканском монастыре Санта-Мария-делле-Грацие в Милане.",
+        price: '3 000 000',
       },
       showModalThree: false,
       selectedCardThree: {
         title: "«Сотворение Адама»",
         author: "Микеланджело",
         images: [
-          "https://picsum.photos/200/300",
-          "https://picsum.photos/200/300",
-          "https://picsum.photos/200/300"
+          'https://cs9.pikabu.ru/post_img/big/2016/09/17/0/1474059896122877083.jpg',
+          'https://artposter.com.ua/image/catalog/gallery/product_images/000157/product_type/picture/000157_1_1_picture.jpg',
+          'https://cs1.livemaster.ru/storage/db/c0/aa0a12ce907fbbfc4d0424fb2au1--kartiny-i-panno-sotvorenie-adama.jpg'
         ],
-        description: "Описание картины 1",
-        price: 1000,
+        description: "Фреска Микеланджело, написанная около 1511 года. Фреска является четвёртой из девяти центральных композиций потолка Сикстинской капеллы, посвящённых девяти сюжетам книги Бытия. ",
+        price: '5 000 000',
       }
     };
   },
@@ -147,11 +156,26 @@ export default {
           btn.style.fontSize = '1.02vw';
         }
       });
+    },
+    setImagesSize() {
+      this.selectedCardOne.images.forEach(img => {
+        img.style.width = "500px";
+        img.style.height = "400px";
+      });
+      this.selectedCardTwo.images.forEach(img => {
+        img.style.width = "500px";
+        img.style.height = "400px";
+      });
+      this.selectedCardThree.images.forEach(img => {
+        img.style.width = "500px";
+        img.style.height = "400px";
+      });
     }
   },
   mounted() {
     this.initState();
-  }
+    this.setImagesSize();
+  },
 }
 </script>
 
@@ -333,5 +357,11 @@ export default {
   background: none;
   border: none;
   z-index: 1;
+}
+.slider-img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  background-size: cover;
 }
 </style>

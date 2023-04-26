@@ -9,15 +9,20 @@
       <p class="author">{{ card.author }}</p>
       <div class="modal-content">
         <div class="modal-slider">
-          <img v-for="(image, index) in card.images" :src="image" :key="index" />
+          <div class="slider-button slider-button-left" @click="prevImage">
+            A<i class="fas fa-chevron-left"></i>
+          </div>
+          <img :src="currentImage" :key="currentImage" class="slider img"/>
+          <div class="slider-button slider-button-right" @click="nextImage">
+            Aaaaa<i class="fas fa-chevron-right"></i>
+          </div>
         </div>
         <p>{{ card.description }}</p>
-        <p>Price: {{ card.price }}</p>
+        <p>Цена: {{ card.price }}</p>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   props: {
@@ -30,14 +35,33 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      currentImageIndex: 0
+    };
+  },
+  computed: {
+    currentImage() {
+      return this.card.images[this.currentImageIndex];
+    }
+  },
   methods: {
     closeModal() {
       this.$emit("close-modal");
-    }
+    },
+    prevImage() {
+      if (this.currentImageIndex > 0) {
+        this.currentImageIndex--;
+      }
+    },
+    nextImage() {
+      if (this.currentImageIndex < this.card.images.length - 1) {
+        this.currentImageIndex++;
+      }
+    },
   }
 };
 </script>
-
 <style>
 .modal {
   position: fixed;
@@ -83,15 +107,43 @@ export default {
 .modal-content {
   margin-top: 20px;
 }
+.slider-button {
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+.slider-button-left {
+  border: 1px solid black;
+}
+.slider-button-right {
+  display: flex;
+  float: right;
+  border: 1px solid black;
+  margin-left: 200px;
+}
 .slider {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  max-width: 600px;
+  max-height: 400px;
+  background-size: cover;
 }
-.slider img {
-  max-width: 100%;
-  max-height: 300px;
-  object-fit: contain;
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background-size: cover;
 }
 </style>
