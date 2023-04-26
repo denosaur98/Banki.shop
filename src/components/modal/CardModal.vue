@@ -191,4 +191,15 @@ export default {
   height: 29.28vw;
   background-size: cover;
 }
+.modal-container::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+.modal-container::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+.modal-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
 </style>
