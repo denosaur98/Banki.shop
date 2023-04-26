@@ -147,35 +147,35 @@ export default {
   margin-top: 20px;
 }
 .slider-button {
-  z-index: 999;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
   border: none;
   cursor: pointer;
   color: #fff;
+  width: 40px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 999;
 }
 .slider-button-left {
-  font-size: 40px;
-  height: 35px;
-  width: 10px;
-  color: rgb(255, 255, 255);
-}
-.slider-button-left:hover {
-  color: rgba(255,145,54,1);
-  transition: 0.3s all ease;
+  left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .slider-button-right {
-  font-size: 40px;
-  height: 35px;
-  width: 10px;
-  margin-left: 41vw;
-  color: rgb(255, 255, 255);
+  right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-.slider-button-right:hover {
-  color: rgba(255,145,54,1);
-  transition: 0.3s all ease;
+.slider-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .slider {
   display: flex;
