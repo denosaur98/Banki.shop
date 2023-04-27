@@ -78,24 +78,33 @@
   .footer {
     position: fixed;
     width: 100%;
+    bottom: 0;
     border-bottom: none;
-    height: 8vw;
+    height: 12vw;
+    padding: 1vw;
   }
   .contacts_footer_container {
     display: flex;
     flex-direction: column;
-    margin-left: -1vw;
+    margin-left: 1vw;
   }
   .contacts {
-    font-size: 0.9vw;
-    line-height: 100%;
+    margin-top: 2vw;
+    font-size: 1.7vw;
+    line-height: 40%;
   }
   .links_container_footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     grid-gap: 1.5vw;
-    margin-top: 0.5vw;
+    margin-top: 0.7vw;
+  }
+  .phone {
+    display: none;
+  }
+  .geo {
+    display: none;
   }
 }
 </style>

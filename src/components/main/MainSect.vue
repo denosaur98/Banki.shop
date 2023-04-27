@@ -364,8 +364,9 @@ export default {
   }
   .title {
     display: flex;
-    margin-left: 42.5vw;
-    margin-top: 5vw;
+    margin-left: 34.5vw;
+    margin-top: 9vw;
+    font-size: 2vw;
   }
   .blocks_container {
     display: grid;
@@ -415,8 +416,8 @@ export default {
     font-size: 2.5vw;
   }
   .loading::before {
-    margin-top: 0.9vw;
-    margin-left: 0.9vw;
+    margin-top: 1.5vw;
+    margin-left: 1.5vw;
     content: '';
     width: 1.2vw;
     height: 1.2vw;

@@ -126,22 +126,25 @@ export default {
     grid-gap: 1.5vw;
   }
   .link {
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     margin-right: 2vw;
-    
+  }
+  .search {
+    width: 18.31vw;
+    height: 3.4vw;
+    font-size: 1vw;
   }
   .link:nth-child(4) {
     grid-column: 2 / 3;
     margin-left: -7vw;
   }
-
   .link:nth-child(5) {
     grid-column: 3 / 4;
     margin-left: -7vw;
   }
   .search_container {
-    margin-left: -2vw;
-    margin-top: 3.3vw;
+    margin-left: 1vw;
+    margin-top: 4.3vw;
   }
   .btn {
     display: none;
