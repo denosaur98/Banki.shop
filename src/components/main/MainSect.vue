@@ -376,7 +376,7 @@ export default {
     grid-template-rows: repeat(2, auto);
     justify-items: center;
     width: 37.38vw;
-    margin-left: 8vw;
+    margin-left: 8.5vw;
     margin-bottom: 5vw;
   }
   .block {
