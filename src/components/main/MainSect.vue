@@ -322,8 +322,8 @@ export default {
   margin-top: -0.10vw;
   margin-left: -0.16vw;
   content: '';
-  width: 20px;
-  height: 20px;
+  width: 1.46vw;
+  height: 1.46vw;
   border-radius: 50%;
   border: 2px solid #ccc;
   border-top-color: #333;
@@ -384,6 +384,13 @@ export default {
   }
   .nt_sale {
     margin-top: 1vw;
+  }
+  .loading::before {
+    margin-top: 0.9vw;
+    margin-left: 0.9vw;
+    content: '';
+    width: 1.2vw;
+    height: 1.2vw;
   }
 }
 </style>

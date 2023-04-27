@@ -88,7 +88,7 @@ export default {
 .modal_container {
   position: relative;
   margin: auto;
-  max-width: 600px;
+  max-width: 43.92vw;
   max-height: 90%;
   overflow: auto;
   background-color: #fff;
@@ -158,25 +158,25 @@ export default {
   border: none;
   cursor: pointer;
   color: #fff;
-  width: 40px;
-  height: 80px;
+  width: 2.93vw;
+  height: 5.86vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 2.2vw;
   font-weight: bold;
   transition: background-color 0.2s ease-in-out;
   z-index: 999;
 }
 .slider_button_left {
   left: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 0.37vw;
+  border-bottom-right-radius: 0.37vw;
 }
 .slider_button_right {
   right: 0;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 0.37vw;
+  border-bottom-left-radius: 0.37vw;
 }
 .slider_button:hover {
   background-color: rgba(0, 0, 0, 0.7);
@@ -185,7 +185,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 1.46vw;
   width: 43.92vw;
   height: 29.28vw;
   background-size: cover;
@@ -209,5 +209,8 @@ export default {
 .modal_container::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 5px;
+}
+@media screen and (max-width: 550px) {
+
 }
 </style>
