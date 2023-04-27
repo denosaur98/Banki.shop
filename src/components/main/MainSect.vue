@@ -360,7 +360,7 @@ export default {
 }
 @media screen and (max-width: 550px) {
   .main {
-    height: 50vw
+    height: 100%;
   }
   .title {
     display: flex;
@@ -376,6 +376,7 @@ export default {
     justify-items: center;
     width: 37.38vw;
     margin-left: 33.64vw;
+    margin-bottom: 5vw;
   }
   .price_sale {
     display: flex;
