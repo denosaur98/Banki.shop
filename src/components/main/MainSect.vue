@@ -360,7 +360,7 @@ export default {
 }
 @media screen and (max-width: 550px) {
   .main {
-    min-height: 80vw;
+    height: 159.5vw;
   }
   .title {
     display: flex;
@@ -375,16 +375,44 @@ export default {
     grid-template-rows: repeat(2, auto);
     justify-items: center;
     width: 37.38vw;
-    margin-left: 33.64vw;
+    margin-left: 8vw;
     margin-bottom: 5vw;
+  }
+  .block {
+    width: 40vw;
+    height: 50vw;
+  }
+  .block_sales {
+    width: 40vw;
+    height: 50vw;
+  }
+  .item1, .item2, .item3, .item4 {
+    width: 40vw;
+    height: 22.67vw;
+  }
+  .description {
+    font-size: 3vw;
+  }
+  .btn_main {
+    margin-top: 0.7vw;
+    cursor: pointer;
+    font-size: 4.02vw;
+    line-height: 150%;
+    width: 8.15vw;
+    height: 4.65vw;
+  }
+  .price {
+    font-size: 2.5vw;
   }
   .price_sale {
     display: flex;
     line-height: 110%;
     margin-top: 0.6vw;
+    font-size: 2vw;
   }
   .nt_sale {
     margin-top: 1vw;
+    font-size: 2.5vw;
   }
   .loading::before {
     margin-top: 0.9vw;
