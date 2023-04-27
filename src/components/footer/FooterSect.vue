@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="links_container">
+    <div class="links_container_footer">
       <a href="#" class="link">Каталог</a>
       <a href="#" class="link">Доставка</a>
       <a href="#" class="link">Оплата</a>
@@ -27,6 +27,11 @@
   height: 5vw;
   border-bottom: 1px solid rgb(187, 187, 187);
   background: #E5E5E5;
+}
+.links_container_footer {
+  display: flex;
+  margin-top: 1.8vw;
+  margin-left: 23.33vw;
 }
 .link:hover {
   opacity: 0.7;
@@ -67,5 +72,27 @@
   height: 0.73vw;
   margin-right: 0.47vw;
   margin-top: 0.85vw;
+}
+@media screen and (max-width: 550px) {
+  .footer {
+    border-bottom: none;
+    height: 8vw;
+  }
+  .contacts_footer_container {
+    display: flex;
+    flex-direction: column;
+    margin-left: -1vw;
+  }
+  .contacts {
+    font-size: 0.9vw;
+    line-height: 100%;
+  }
+  .links_container_footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 1.5vw;
+    margin-top: 0.5vw;
+  }
 }
 </style>

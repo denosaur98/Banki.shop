@@ -85,7 +85,7 @@ export default {
 }
 .search {
   background: #E5E5E5;
-  padding-left: 16px;
+  padding-left: 1.17vw;
   border: 1px solid rgb(187, 187, 187);
   outline: none;
   font-family: 'Merriweather';
@@ -114,5 +114,37 @@ export default {
   border: 1px solid #776763;
   background: #776763;
   transition: 0.3s all ease;
+}
+@media screen and (max-width: 550px) {
+  .header {
+    border-bottom: none;
+  }
+  .links_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 1.5vw;
+  }
+  .link {
+    font-size: 1.5vw;
+    margin-right: 2vw;
+    
+  }
+  .link:nth-child(4) {
+    grid-column: 2 / 3;
+    margin-left: -7vw;
+  }
+
+  .link:nth-child(5) {
+    grid-column: 3 / 4;
+    margin-left: -7vw;
+  }
+  .search_container {
+    margin-left: -2vw;
+    margin-top: 3.3vw;
+  }
+  .btn {
+    display: none;
+  }
 }
 </style>

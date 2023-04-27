@@ -358,4 +358,32 @@ export default {
   border: none;
   z-index: 1;
 }
+@media screen and (max-width: 550px) {
+  .main {
+    height: 50vw
+  }
+  .title {
+    display: flex;
+    margin-left: 42.5vw;
+    margin-top: 5vw;
+  }
+  .blocks_container {
+    display: grid;
+    margin-top: 5vw;
+    grid-gap: 2vw;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+    width: 37.38vw;
+    margin-left: 33.64vw;
+  }
+  .price_sale {
+    display: flex;
+    line-height: 110%;
+    margin-top: 0.6vw;
+  }
+  .nt_sale {
+    margin-top: 1vw;
+  }
+}
 </style>
