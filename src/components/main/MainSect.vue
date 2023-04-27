@@ -360,7 +360,7 @@ export default {
 }
 @media screen and (max-width: 550px) {
   .main {
-    height: 100%;
+    height: 80vw;
   }
   .title {
     display: flex;

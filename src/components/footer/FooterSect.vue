@@ -25,6 +25,7 @@
   display: flex;
   justify-content: center;
   height: 5vw;
+  width: 100%;
   border-bottom: 1px solid rgb(187, 187, 187);
   background: #E5E5E5;
 }
@@ -75,6 +76,8 @@
 }
 @media screen and (max-width: 550px) {
   .footer {
+    position: fixed;
+    width: 100%;
     border-bottom: none;
     height: 8vw;
   }
