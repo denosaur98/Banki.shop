@@ -360,7 +360,7 @@ export default {
 }
 @media screen and (max-width: 550px) {
   .main {
-    height: 159.5vw;
+    height: 100%;
   }
   .title {
     display: flex;
@@ -421,6 +421,12 @@ export default {
     content: '';
     width: 1.2vw;
     height: 1.2vw;
+  }
+  .btn_modal {
+    display: flex;
+    margin-top: -45.5vw;
+    width: 40vw;
+    height: 35vw;
   }
 }
 </style>

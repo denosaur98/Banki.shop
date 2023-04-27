@@ -211,6 +211,32 @@ export default {
   border-radius: 5px;
 }
 @media screen and (max-width: 550px) {
-
+  .block {
+    width: 40vw;
+    height: 50vw;
+  }
+  .modal {
+    margin-top: 25vw;
+  }
+  .modal_container {
+    min-width: 50vw;
+    height: 40%;
+  }
+  .title_picture {
+    font-size: 3vw;
+  }
+  .author {
+    font-size: 2vw;
+  }
+  .img {
+    min-width: 50vw;
+    height: 30vw;
+  }
+  .description_modal {
+    font-size: 1.7vw;
+  }
+  .price_modal {
+    font-size: 2.5vw;
+  }
 }
 </style>
